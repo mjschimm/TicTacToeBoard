@@ -14,9 +14,10 @@ class TicTacToeBoardTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor) 
 };
 
-/* EXAMPLE TEST FORMAT
-TEST(TicTacToeBoardTest, sanityCheck)
+/*EXAMPLE TEST FORMAT*/
+TEST(TicTacToeBoardTest)
 {
-	ASSERT_TRUE(true);
+	if(TicTacToeBoardTest.turn == X) {
+		ASSERT_TRUE(true);
+	}
 }
-*/
