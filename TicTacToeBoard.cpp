@@ -17,17 +17,23 @@ TicTacToeBoard::TicTacToeBoard()
  * Switches turn member variable to represent whether it's X's or O's turn
  * and returns whose turn it is
 **/
+/* 
+BUG: Everytime we toggleTurn(), the turn of the piece should always be set to the opposite
+of what it currently is. If current turn is "O", then toggle turn should set the turn as "X" and return "X".
+The issue with this bug is that we return the opposite of what the current turn is (which
+is correct), but we do not always set the turn to the opposite of the current turn.
+So everytime the current turn is "O", we return "X" correctly, but do not actually switch the turn.
+*/
 Piece TicTacToeBoard::toggleTurn()
 {
   if(turn == X) {
     turn = O;
     return O;
   }
-  if(turn == O) {
-    turn = O;
+  else {
+    turn = X;
     return X;
   }
-  return Invalid;
 }
 
 /**
@@ -41,7 +47,7 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
-  if(getWinner() == X || getWinner() == O) {
+  if(getWinner() == X || getWinner() == O || getWinner() == Blank) {
     return Invalid;
   }
   else if (row >= BOARDSIZE || column >= BOARDSIZE || row < 0 || column < 0) {
@@ -110,8 +116,7 @@ Piece TicTacToeBoard::getWinner()
   if(board_is_full == false) {
     return Invalid;
   }
-  else if(board_is_full == true) {
+  else {
     return Blank;
   }
-  return Invalid;
 }
