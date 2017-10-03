@@ -1,3 +1,7 @@
+Travis build status: 
+https://travis-ci.org/mjschimm/TicTacToeBoard.svg?branch=master
+
+
 # TicTacToeBoard
 
 ## Associated Enumerated Types
