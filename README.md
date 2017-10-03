@@ -1,5 +1,6 @@
 Travis build status: 
-https://travis-ci.org/mjschimm/TicTacToeBoard.svg?branch=master
+
+[![Build Status](https://travis-ci.org/mjschimm/TicTacToeBoard.svg?branch=master)](https://travis-ci.org/mjschimm/TicTacToeBoard)
 
 
 # TicTacToeBoard
