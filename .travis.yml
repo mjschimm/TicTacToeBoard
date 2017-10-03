@@ -1,1 +1,2 @@
-compiler: clang
+install: true
+script: make
