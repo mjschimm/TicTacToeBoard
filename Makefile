@@ -47,14 +47,3 @@ TicTacToeBoardTest.o : TicTacToeBoardTest.cpp \
 
 TicTacToeBoardTest : TicTacToeBoard.o TicTacToeBoardTest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
-
-# Builds the Rando class and associated RandoTest
-rando.o : rando.cpp rando.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c rando.cpp
-
-randoTest.o : randoTest.cpp \
-                     rando.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c randoTest.cpp
-
-RandoTest : rando.o randoTest.o gtest_main.a
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
