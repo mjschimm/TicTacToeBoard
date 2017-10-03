@@ -1,2 +1,3 @@
 install: true
+language: c++
 script: make
